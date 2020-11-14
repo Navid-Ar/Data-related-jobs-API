@@ -1,0 +1,181 @@
+{%extends "layout.html"%}
+{%block content%}
+<link rel="stylesheet" href="style.css" />
+<main>
+
+  <h1>Salary Prediction Tool</h1>
+  <br>
+  <br>
+
+  <div>
+    <form action="/result" method="POST">
+      <div style="border: solid; padding-left:50px; padding-bottom:30px; background-color: lightblue; width: 50%; font-family: Arial, Helvetica, sans-serif
+        ; margin-left: 30px;">
+        <h3><b>Company Profile</b></h3>
+        <hr>
+        <label for="size">Company Size</label>
+        <select id="size" name="size">
+          <option style="color: grey;">No Selection</option>
+          <option value="0">1 to 50 Employees</option>
+          <option value="6">51 to 200 Employees</option>
+          <option value="3">201 to 500 Employees</option>
+          <option value="5">501 to 1000 Employees</option>
+          <option value="2">1001 to 5000 Employees</option>
+          <option value="4">5001 to 10000 Employees</option>
+          <option value="1">10000+ Employees</option>
+        </select>
+        <br>
+        <br>
+        <label for="ownership">Type of Ownership</label>
+        <select id="edu" name="ownership">
+          <option style="color: grey;">No Selection</option>
+          <option value="0">College / University</option>
+          <option value="1">Company - Private</option>
+          <option value="2">Company - Public</option>
+          <option value="3">Contract</option>
+          <option value="4">Government</option>
+          <option value="5">Hospital</option>
+          <option value="6">Nonprofit Organization</option>
+          <option value="7">Other Organization</option>
+          <option value="8">Private Practice / Firm</option>
+          <option value="9">School / School District</option>
+          <option value="10">Subsidiary or Business Segment</option>
+        </select>
+        <br>
+        <br>
+        <label for="sector">Sector</label>
+        <select id="martial_stat" name="sector">
+          <option style="color: grey;">No Selection</option>
+          <option value="1">Accounting & Legal</option>
+          <option value="2">Aerospace & Defense</option>
+          <option value="3">Agriculture & Forestry</option>
+          <option value="4">Arts, Entertainment & Recreation</option>
+          <option value="5">Biotech & Pharmaceuticals</option>
+          <option value="6">Business Services</option>
+          <option value="7">Construction, Repair & Maintenance</option>
+          <option value="8">Consumer Services</option>
+          <option value="9">Education</option>
+          <option value="10">Finance</option>
+          <option value="11">Government</option>
+          <option value="12">Health Care</option>
+          <option value="13">Information Technology</option>
+          <option value="14">Insurance</option>
+          <option value="15">Manufacturing</option>
+          <option value="16">Media</option>
+          <option value="17">Mining & Metals</option>
+          <option value="18">Non-Profit</option>
+          <option value="19">Oil, Gas, Energy & Utilities</option>
+          <option value="20">Real Estate</option>
+          <option value="21">Restaurants, Bars & Food Services</option>
+          <option value="22">Retail</option>
+          <option value="23">Telecommunications</option>
+          <option value="24">Transportation & Logistics</option>
+          <option value="25">Travel & Tourism</option>
+          <option value="0">Other</option>
+        </select>
+        <br>
+        <br>
+        <label for="revenue">Revenue</label>
+        <select id="revenue" name="Revenue">
+          <option style="color: grey;">No Selection</option>
+          <option value="11">Less than $1 million (USD)</option>
+          <option value="1">$1 to $5 million (USD)</option>
+          <option value="8">$5 to $10 million (USD)</option>
+          <option value="2">$10 to $25 million (USD)</option>
+          <option value="6">$25 to $50 million (USD)</option>
+          <option value="9">$50 to $100 million (USD)</option>
+          <option value="4">$100 to $500 million (USD)</option>
+          <option value="10">$500 million to $1 billion (USD)</option>
+          <option value="0">$1 to $2 billion (USD)</option>
+          <option value="5">$2 to $5 billion (USD)</option>
+          <option value="7">$5 to $10 billion (USD)</option>
+          <option value="3">$10+ billion (USD)</option>
+        </select>
+        <br>
+        <br>
+        <label for="state">State</label>
+        <select id="state" name="state">
+          <option style="color: grey;">No Selection</option>
+          <option value="0">Alaska</option>
+          <option value="1">Alabama</option>
+          <option value="2">Arkansas</option>
+          <option value="3">Arizona</option>
+          <option value="4">Arapahoe</option>
+          <option value="5">California</option>
+          <option value="6">Colorado</option>
+          <option value="7">Connecticut</option>
+          <!-- <option value="8">Washington</option> -->
+          <option value="9">Delaware</option>
+          <option value="10">Florida</option>
+          <option value="11">Georgia</option>
+          <option value="12">Iwoa</option>
+          <option value="13">Idaho</option>
+          <option value="14">Illinois</option>
+          <option value="15">Indiana</option>
+          <option value="16">Kansas</option>
+          <option value="17">Kentucky</option>
+          <option value="18">Louisiana</option>
+          <option value="19">Massachusetts</option>
+          <option value="20">Maryland</option>
+          <option value="21">Maine</option>
+          <option value="22">Michigan</option>
+          <option value="23">Minnesota</option>
+          <option value="24">Missouri</option>
+          <option value="25">Mississippi</option>
+          <option value="26">North Carolina</option>
+          <option value="27">Nebraska</option>
+          <option value="28">New Hampshire</option>
+          <option value="29">New Jersey</option>
+          <option value="30">New Mexico</option>
+          <option value="11">Nevada</option>
+          <option value="32">New York</option>
+          <option value="33">Ohio</option>
+          <option value="34">Oklahoma</option>
+          <option value="35">Oregon</option>
+          <option value="36">Penssylvania</option>
+          <option value="37">Puerto Rico</option>
+          <option value="38">Rhode Island</option>
+          <option value="39">South Carolina</option>
+          <option value="40">Tennessee</option>
+          <option value="41">Texas</option>
+          <option value="42">Utah</option>
+          <option value="43">Virginia</option>
+          <option value="44">Vermont</option>
+          <option value="45">Washington</option>
+          <option value="46">Wisconsin</option>
+          <option value="47">West Virginia</option>
+          <option value="48">Wyoming</option>
+        </select>
+      </div>
+      <br>
+      <br>
+      <div style="border: solid; padding-left:50px; padding-bottom:30px; background-color: lightblue; width: 50%; font-family: Arial, Helvetica, sans-serif
+      ; margin-left: 30px;">
+        <h3><b>Required Years of Experience</b></h3>
+        <hr>
+        <input type="range" min="0" max="12" value="2" class="slider" id="myRange">
+        <p>Average Years: <span id="demo"></span></p>
+      </div>
+      <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+        }
+      </script>
+      <br>
+      <br>
+      <input type="submit" value="Predict">
+    </form>
+  </div>
+
+  <!-- <div style="padding:20px; background-color: lightblue">
+    He is a fantastic father who care about his son's future
+  </div> -->
+
+
+
+</main>
+{%endblock content%}
