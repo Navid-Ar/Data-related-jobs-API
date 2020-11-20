@@ -1,0 +1,85 @@
+.main-body {
+    background-color: rgba(22, 10, 10, 0.61);
+    
+ 
+
+}
+
+.heading {
+    padding-top: 10px;
+    padding-left:10px;
+    padding-bottom: 10px;
+    border: solid;
+    background-color: rgb(18, 43, 58); 
+    color: rgb(255, 255, 255);
+}
+
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:20px; 
+    width: 44%; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.in-box {
+    padding-top:30px;
+    padding-left:px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 80px 0;
+  }
+  
+  td {
+    padding: 15px 0;
+  }
+
+  table tr td {
+    text-align: left;
+    color: white;
+    width: 180px;
+    padding-left:20px;
+  }
+
+  select, input[type="text"]{
+    width:200px;
+    box-sizing:border-box;
+  }
+
+  select, input[type="range"]{
+    width:200px;
+    box-sizing:border-box;
+  }
+
+body {background-image: url('web-4667382_1280.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
+
+
+.submit-class {
+  position: relative;
+  left: 45%;
+ 
+  padding-bottom:20px;
+
+}    
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: whitesmoke;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
