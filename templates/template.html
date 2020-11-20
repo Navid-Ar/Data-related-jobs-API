@@ -1,161 +1,324 @@
 {%extends "layout.html"%}
 {%block content%}
-<link rel="stylesheet" href="style.css" />
-<main>
+<main class="main-body">
+  <div style="text-align: center; color: white; padding-top:30px;">
+    <h3><b>Salary Prediction Tool</b></h3>
+    <p>This app predicts the salary of data-related jobs based on user's input. <br> Refer to my Github for more
+      information about the
+      <a class="LI-simple-link" href='https://github.com/Navid-Ar/Data-Related-Jobs'><b>back end</b></a> and <a
+        class="LI-simple-link" href='https://github.com/Navid-Ar/Data-related-jobs-API'><b>front end</b></a>
+      development.
+    </p>
+  </div>
 
-  <h1>Salary Prediction Tool</h1>
   <br>
   <br>
 
   <div>
-    <form action="/result" method="POST">
-      <div style="border: solid; padding-left:50px; padding-bottom:30px; background-color: lightblue; width: 50%; font-family: Arial, Helvetica, sans-serif
-        ; margin-left: 30px;">
-        <h3><b>Company Profile</b></h3>
-        <hr>
-        <label for="size">Company Size</label>
-        <select id="size" name="size">
-          <option style="color: grey;">No Selection</option>
-          <option value="0">1 to 50 Employees</option>
-          <option value="6">51 to 200 Employees</option>
-          <option value="3">201 to 500 Employees</option>
-          <option value="5">501 to 1000 Employees</option>
-          <option value="2">1001 to 5000 Employees</option>
-          <option value="4">5001 to 10000 Employees</option>
-          <option value="1">10000+ Employees</option>
-        </select>
-        <br>
-        <br>
-        <label for="ownership">Type of Ownership</label>
-        <select id="edu" name="ownership">
-          <option style="color: grey;">No Selection</option>
-          <option value="0">College / University</option>
-          <option value="1">Company - Private</option>
-          <option value="2">Company - Public</option>
-          <option value="3">Contract</option>
-          <option value="4">Government</option>
-          <option value="5">Hospital</option>
-          <option value="6">Nonprofit Organization</option>
-          <option value="7">Other Organization</option>
-          <option value="8">Private Practice / Firm</option>
-          <option value="9">School / School District</option>
-          <option value="10">Subsidiary or Business Segment</option>
-        </select>
-        <br>
-        <br>
-        <label for="sector">Sector</label>
-        <select id="martial_stat" name="sector">
-          <option style="color: grey;">No Selection</option>
-          <option value="1">Accounting & Legal</option>
-          <option value="2">Aerospace & Defense</option>
-          <option value="3">Agriculture & Forestry</option>
-          <option value="4">Arts, Entertainment & Recreation</option>
-          <option value="5">Biotech & Pharmaceuticals</option>
-          <option value="6">Business Services</option>
-          <option value="7">Construction, Repair & Maintenance</option>
-          <option value="8">Consumer Services</option>
-          <option value="9">Education</option>
-          <option value="10">Finance</option>
-          <option value="11">Government</option>
-          <option value="12">Health Care</option>
-          <option value="13">Information Technology</option>
-          <option value="14">Insurance</option>
-          <option value="15">Manufacturing</option>
-          <option value="16">Media</option>
-          <option value="17">Mining & Metals</option>
-          <option value="18">Non-Profit</option>
-          <option value="19">Oil, Gas, Energy & Utilities</option>
-          <option value="20">Real Estate</option>
-          <option value="21">Restaurants, Bars & Food Services</option>
-          <option value="22">Retail</option>
-          <option value="23">Telecommunications</option>
-          <option value="24">Transportation & Logistics</option>
-          <option value="25">Travel & Tourism</option>
-          <option value="0">Other</option>
-        </select>
-        <br>
-        <br>
-        <label for="revenue">Revenue</label>
-        <select id="revenue" name="Revenue">
-          <option style="color: grey;">No Selection</option>
-          <option value="11">Less than $1 million (USD)</option>
-          <option value="1">$1 to $5 million (USD)</option>
-          <option value="8">$5 to $10 million (USD)</option>
-          <option value="2">$10 to $25 million (USD)</option>
-          <option value="6">$25 to $50 million (USD)</option>
-          <option value="9">$50 to $100 million (USD)</option>
-          <option value="4">$100 to $500 million (USD)</option>
-          <option value="10">$500 million to $1 billion (USD)</option>
-          <option value="0">$1 to $2 billion (USD)</option>
-          <option value="5">$2 to $5 billion (USD)</option>
-          <option value="7">$5 to $10 billion (USD)</option>
-          <option value="3">$10+ billion (USD)</option>
-        </select>
-        <br>
-        <br>
-        <label for="state">State</label>
-        <select id="state" name="state">
-          <option style="color: grey;">No Selection</option>
-          <option value="0">Alaska</option>
-          <option value="1">Alabama</option>
-          <option value="2">Arkansas</option>
-          <option value="3">Arizona</option>
-          <option value="4">Arapahoe</option>
-          <option value="5">California</option>
-          <option value="6">Colorado</option>
-          <option value="7">Connecticut</option>
-          <!-- <option value="8">Washington</option> -->
-          <option value="9">Delaware</option>
-          <option value="10">Florida</option>
-          <option value="11">Georgia</option>
-          <option value="12">Iwoa</option>
-          <option value="13">Idaho</option>
-          <option value="14">Illinois</option>
-          <option value="15">Indiana</option>
-          <option value="16">Kansas</option>
-          <option value="17">Kentucky</option>
-          <option value="18">Louisiana</option>
-          <option value="19">Massachusetts</option>
-          <option value="20">Maryland</option>
-          <option value="21">Maine</option>
-          <option value="22">Michigan</option>
-          <option value="23">Minnesota</option>
-          <option value="24">Missouri</option>
-          <option value="25">Mississippi</option>
-          <option value="26">North Carolina</option>
-          <option value="27">Nebraska</option>
-          <option value="28">New Hampshire</option>
-          <option value="29">New Jersey</option>
-          <option value="30">New Mexico</option>
-          <option value="11">Nevada</option>
-          <option value="32">New York</option>
-          <option value="33">Ohio</option>
-          <option value="34">Oklahoma</option>
-          <option value="35">Oregon</option>
-          <option value="36">Penssylvania</option>
-          <option value="37">Puerto Rico</option>
-          <option value="38">Rhode Island</option>
-          <option value="39">South Carolina</option>
-          <option value="40">Tennessee</option>
-          <option value="41">Texas</option>
-          <option value="42">Utah</option>
-          <option value="43">Virginia</option>
-          <option value="44">Vermont</option>
-          <option value="45">Washington</option>
-          <option value="46">Wisconsin</option>
-          <option value="47">West Virginia</option>
-          <option value="48">Wyoming</option>
-        </select>
+    <form>
+
+      <div class="box">
+        <h4 class="heading">
+          <b>Position</b>
+        </h4>
+        <table>
+
+          <tr>
+            <td>
+              <label for="title">Job Title</label>
+            </td>
+            <td>
+              <select id="title" name="title" required="true">
+                <option style="color: grey;">-- select a value --</option>
+                <option value="0">Data Analyst</option>
+                <option value="1">Data Architect</option>
+                <option value="2">Data Engineer</option>
+                <option value="3">Data Scientist</option>
+                <option value="4">Machine Learning Engineer</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="seniority">Senior Position</label>
+            </td>
+            <td>
+              <input type="radio" name="seniority" id="seniority" value="1">Yes
+              <input type="radio" name="seniority" id="seniority" value="0" checked> No
+            </td>
+          </tr>
+
+
+
+        </table>
       </div>
+
       <br>
-      <br>
-      <div style="border: solid; padding-left:50px; padding-bottom:30px; background-color: lightblue; width: 50%; font-family: Arial, Helvetica, sans-serif
-      ; margin-left: 30px;">
-        <h3><b>Required Years of Experience</b></h3>
-        <hr>
-        <input type="range" min="0" max="12" value="2" class="slider" id="myRange">
-        <p>Average Years: <span id="demo"></span></p>
+
+      <div class="box">
+        <h4 class="heading">
+          <b>Company Profile</b>
+        </h4>
+        <table class="in-box">
+
+          <tr>
+            <td colspan="1">
+              <label for="state">State</label>
+            </td>
+            <td><select id="state" name="state" required="true">
+                <option style="color: grey;">-- select a value --</option>
+                <option value="0">Alaska</option>
+                <option value="1">Alabama</option>
+                <option value="2">Arkansas</option>
+                <option value="3">Arizona</option>
+                <option value="4">Arapahoe</option>
+                <option value="5">California</option>
+                <option value="6">Colorado</option>
+                <option value="7">Connecticut</option>
+                <!-- <option value="8">Washington</option> -->
+                <option value="9">Delaware</option>
+                <option value="10">Florida</option>
+                <option value="11">Georgia</option>
+                <option value="12">Iwoa</option>
+                <option value="13">Idaho</option>
+                <option value="14">Illinois</option>
+                <option value="15">Indiana</option>
+                <option value="16">Kansas</option>
+                <option value="17">Kentucky</option>
+                <option value="18">Louisiana</option>
+                <option value="19">Massachusetts</option>
+                <option value="20">Maryland</option>
+                <option value="21">Maine</option>
+                <option value="22">Michigan</option>
+                <option value="23">Minnesota</option>
+                <option value="24">Missouri</option>
+                <option value="25">Mississippi</option>
+                <option value="26">North Carolina</option>
+                <option value="27">Nebraska</option>
+                <option value="28">New Hampshire</option>
+                <option value="29">New Jersey</option>
+                <option value="30">New Mexico</option>
+                <option value="11">Nevada</option>
+                <option value="32">New York</option>
+                <option value="33">Ohio</option>
+                <option value="34">Oklahoma</option>
+                <option value="35">Oregon</option>
+                <option value="36">Penssylvania</option>
+                <option value="37">Puerto Rico</option>
+                <option value="38">Rhode Island</option>
+                <option value="39">South Carolina</option>
+                <option value="40">Tennessee</option>
+                <option value="41">Texas</option>
+                <option value="42">Utah</option>
+                <option value="43">Virginia</option>
+                <option value="44">Vermont</option>
+                <option value="45">Washington</option>
+                <option value="46">Wisconsin</option>
+                <option value="47">West Virginia</option>
+                <option value="48">Wyoming</option>
+              </select></td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label for="sector">Sector</label>
+            </td>
+            <td>
+              <select id="sector" name="sector" required="true">
+                <option style="color: grey;">-- select a value --</option>
+                <option value="1">Accounting & Legal</option>
+                <option value="2">Aerospace & Defense</option>
+                <option value="3">Agriculture & Forestry</option>
+                <option value="4">Arts, Entertainment & Recreation</option>
+                <option value="5">Biotech & Pharmaceuticals</option>
+                <option value="6">Business Services</option>
+                <option value="7">Construction, Repair & Maintenance</option>
+                <option value="8">Consumer Services</option>
+                <option value="9">Education</option>
+                <option value="10">Finance</option>
+                <option value="11">Government</option>
+                <option value="12">Health Care</option>
+                <option value="13">Information Technology</option>
+                <option value="14">Insurance</option>
+                <option value="15">Manufacturing</option>
+                <option value="16">Media</option>
+                <option value="17">Mining & Metals</option>
+                <option value="18">Non-Profit</option>
+                <option value="19">Oil, Gas, Energy & Utilities</option>
+                <option value="20">Real Estate</option>
+                <option value="21">Restaurants, Bars & Food Services</option>
+                <option value="22">Retail</option>
+                <option value="23">Telecommunications</option>
+                <option value="24">Transportation & Logistics</option>
+                <option value="25">Travel & Tourism</option>
+                <option value="0">Other</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label for="ownership">Ownership</label>
+            </td>
+            <td>
+              <select id="ownership" name="ownership" required="true">
+                <option style="color: grey;">-- select a value --</option>
+                <option value="0">College / University</option>
+                <option value="1">Company - Private</option>
+                <option value="2">Company - Public</option>
+                <option value="3">Contract</option>
+                <option value="4">Government</option>
+                <option value="5">Hospital</option>
+                <option value="6">Nonprofit Organization</option>
+                <option value="7">Other Organization</option>
+                <option value="8">Private Practice / Firm</option>
+                <option value="9">School / School District</option>
+                <option value="10">Subsidiary or Business Segment</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="size">Size</label>
+            </td>
+            <td>
+              <select id="size" name="size" required="true">
+                <option style="color: grey;">-- select a value --</option>
+                <option value="0">1 to 50 Employees</option>
+                <option value="6">51 to 200 Employees</option>
+                <option value="3">201 to 500 Employees</option>
+                <option value="5">501 to 1000 Employees</option>
+                <option value="2">1001 to 5000 Employees</option>
+                <option value="4">5001 to 10000 Employees</option>
+                <option value="1">10000+ Employees</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <label for="Revenue">Revenue</label>
+            </td>
+            <td>
+              <select id="Revenue" name="Revenue" required="true">
+                <option style="color: grey;">-- select a value --</option>
+                <option value="11">Less than $1 million (USD)</option>
+                <option value="1">$1 to $5 million (USD)</option>
+                <option value="8">$5 to $10 million (USD)</option>
+                <option value="2">$10 to $25 million (USD)</option>
+                <option value="6">$25 to $50 million (USD)</option>
+                <option value="9">$50 to $100 million (USD)</option>
+                <option value="4">$100 to $500 million (USD)</option>
+                <option value="10">$500 million to $1 billion (USD)</option>
+                <option value="0">$1 to $2 billion (USD)</option>
+                <option value="5">$2 to $5 billion (USD)</option>
+                <option value="7">$5 to $10 billion (USD)</option>
+                <option value="3">$10+ billion (USD)</option>
+              </select>
+            </td>
+          </tr>
+
+        </table>
       </div>
+
+
+
+      <br>
+
+      <div class="box">
+        <h4 class="heading">
+          <b>Skills & Requirements</b>
+        </h4>
+        <table>
+
+          <tr>
+            <td>
+              <label for="exp_year">Required Experience</label>
+            </td>
+            <td>
+              <input type="range" min="0" max="12" value="2" class="custom-range" id="myRange">
+              <p style="padding-left:30px; font-size: 12px;">Average Years: <span id="demo"></span></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="graduate">Graduate Degree</label>
+            </td>
+            <td>
+              <input type="radio" name="graduate" id="graduate" value="1">Yes
+              <input type="radio" name="graduate" id="graduate" value="0" checked> No
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="undergrad">Bachelor Degree</label>
+            </td>
+            <td>
+              <input type="radio" name="undergrad" id="undergrad" value="1">Yes
+              <input type="radio" name="undergrad" id="undergrad" value="0" checked> No
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="python">Python</label>
+            </td>
+            <td>
+              <input type="radio" name="python" id="python" value="1" checked>Yes
+              <input type="radio" name="python" id="python" value="0"> No
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="cloud_computing">Cloud Computing</label>
+            </td>
+            <td>
+              <input type="radio" name="cloud_computing" id="cloud_computing" value="1" checked>Yes
+              <input type="radio" name="cloud_computing" id="cloud_computing" value="0"> No
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="ML">Machine Learning</label>
+            </td>
+            <td>
+              <input type="radio" name="ML" id="ML" value="1" checked>Yes
+              <input type="radio" name="ML" id="ML" value="0"> No
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="deep_learning">Deep Learning</label>
+            </td>
+            <td>
+              <input type="radio" name="deep_learning" id="deep_learning" value="1" checked>Yes
+              <input type="radio" name="deep_learning" id="deep_learning" value="0"> No
+            </td>
+          </tr>
+
+
+
+          <tr>
+            <td>
+              <label for="big_data">Big Data Tools</label>
+            </td>
+            <td>
+              <input type="radio" name="big_data" id="big_data" value="1" checked>Yes
+              <input type="radio" name="big_data" id="big_data" value="0"> No
+            </td>
+          </tr>
+
+        </table>
+      </div>
+
+
       <script>
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
@@ -165,10 +328,19 @@
           output.innerHTML = this.value;
         }
       </script>
+
       <br>
-      <br>
-      <input type="submit" value="Predict">
+      <div class="submit-class">
+        <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+      </div>
     </form>
+    <br>
+    <div id="errorAlert" name="errorAlert" class="alert alert-danger" role="alert" style="display:none"></div>
+    <div id="result" name="result"
+      style="padding-bottom:20px; padding-top:20px; font-size: larger; text-align: center;background-color:white; display:none;">
+    </div>
+
+  </div>
   </div>
 
   <!-- <div style="padding:20px; background-color: lightblue">
@@ -178,4 +350,19 @@
 
 
 </main>
+
+<br>
+<br>
+
+
+
+<section id="author" style="padding-left:20px; color:white">
+  <dl style="padding-left:20p">
+    <dd>By: Navid H.Arani</dd>
+    <dd>Email: h.arani.navid@gmail.com</dd>
+    <dd class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal"
+      data-theme="dark" data-vanity="emilychen80108"><a class="LI-simple-link"
+        href='https://www.linkedin.com/in/navid-h-arani/'>Linkedin</a></dd>
+  </dl>
+</section>
 {%endblock content%}
