@@ -10,3 +10,7 @@
 * app.py : Contains python code for flask web application.
 /static : Contains images, jquerry and css styles.
 /templates : Contains the layout the html code.
+
+## Running the Application
+The app can be run locally by using the following steps:
+
