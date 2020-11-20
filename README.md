@@ -18,5 +18,3 @@ The app can be run locally by using the following steps:
 3. Create and activate a new virtual environment.
 4. Install necessary requirements with:
   * `pip install -r requirments.txt`
-5. Update folder_path variable in model_params.py with absolute path to created folder.
-
