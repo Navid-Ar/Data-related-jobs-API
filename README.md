@@ -13,4 +13,10 @@
 
 ## Running the Application
 The app can be run locally by using the following steps:
+1. Create a folder to house application
+2.git clone https://github.com/Navid-Ar/Data-related-jobs-API.git
+3. Create and activate a new virtual environment.
+4. Install necessary requirements with:
+* pip install -r requirments.txt
+5. Update folder_path variable in model_params.py with absolute path to created folder.
 
